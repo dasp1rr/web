@@ -2,10 +2,54 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-.test {
-    color: yellow !important;
+p.paragraph {
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
 }
 
-.test {
-    color: red !important;
+h1.main {
+    font-size: 36px;
+    text-align: center;
+}
+
+h2.second {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
+
+h3.third {
+    font-size: 36px;
+    text-align: center;
+}
+
+h4.fourth {
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;
+}
+
+input.field {
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;
+}
+
+input.button {
+    background: linear-gradient(to right, #5A98D0, #A35AD0); 
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+form {
+    background-image: url("../img/stamford.jpg");
+    background-repeat: no-repeat;
 }
