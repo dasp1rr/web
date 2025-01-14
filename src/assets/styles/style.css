@@ -1,9 +1,9 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-@import "./header.css";
-@import "./startBlock.css";
-@import "./footer.css";
+@import "global.css";
+@import "fonts.css";
+@import "utils.css";
+@import "header.css";
+@import "startBlock.css";
+@import "footer.css";
 
 body {
     background: #f2f4f7;
