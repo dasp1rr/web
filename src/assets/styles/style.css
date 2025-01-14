@@ -1,3 +1,21 @@
 @import "./global.css";
 @import "./fonts.css";
 @import "./utils.css";
+@import "./header.css";
+@import "./startBlock.css";
+@import "./footer.css";
+
+body {
+    background: #f2f4f7;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    padding: 0 108px;
+}
