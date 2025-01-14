@@ -1,0 +1,163 @@
+.develop-block {
+    background-color: #ffffff;
+
+    margin-left: -108px;
+    margin-right: -108px;
+    padding: 80px 108px;
+    display: flex;
+    gap: 128px;
+}
+
+.left {
+    width: 600px;
+
+    display: grid;
+    gap: 34px;
+}
+
+.left-content {
+    display: grid;
+    gap: 32px;
+}
+
+.left-title {
+    font-family: "Inter Bold", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 144%;
+    letter-spacing: 0.33px;
+    color: #101828;
+}
+
+.left-text {
+    font-family: "SF Pro Text Medium", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #101828;
+}
+
+.technologies {
+    width: 496px;
+
+    display: grid;
+    gap: 16px;
+}
+
+.tech-subtitle {
+    font-family: "SF Pro Display Semibold", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.34px;
+    color: #101828;
+}
+
+.tech-list {
+    font-family: "SF Pro Text Regular", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.41px;
+    color: #344054;
+}
+
+.tech-list span {
+    color: #2d66ee;
+}
+
+.dev-list {
+    display: grid;
+}
+
+.dev-list-item {
+    padding: 12px 0;
+
+    display: flex;
+    gap: 12px;
+
+    align-items: center;
+    width: fit-content;
+}
+
+.dev-list-item a{
+    font-family: "SF Pro Display Regular", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.38px;
+    color: #1d2939;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dev-list-item a:hover{
+    font-family: "SF Pro Display Semibold", sans-serif;
+    font-weight: 600;
+    color: #101828;
+
+    border-bottom: solid 1px #2d66ee;
+}
+
+@media screen and (max-width: 1224px) {
+    .develop-block {
+        margin-left: -80px;
+        margin-right: -80px;
+    
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .develop-block {
+        margin-left: -32px;
+        margin-right: -32px;
+    
+        padding: 32px;
+    
+        gap: 82px;
+    }
+
+    .left {
+        margin-left: 40px;
+        width: 320px;
+
+        gap: 32px;
+    }
+
+    .left-content, .technologies {
+        width: 320px;
+    } 
+
+    .left-title {
+        font-size: 28px;
+    }
+
+    .tech-list {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .develop-block {
+        margin-left: -16px;
+        margin-right: -16px;
+    
+        padding: 32px 16px;
+        
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .left {
+        margin-left: initial;
+    }
+
+    .tech-list {
+        font-size: 14px;
+
+        width: 278px;
+    }
+}
