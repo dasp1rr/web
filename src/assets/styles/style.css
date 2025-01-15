@@ -1,10 +1,10 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-@import "./header.css";
-@import "./startBlock.css";
-@import "./footer.css";
-@import "./developBlock.css";
+@import "global.css";
+@import "fonts.css";
+@import "utils.css";
+@import "header.css";
+@import "startBlock.css";
+@import "footer.css";
+@import "developBlock.css";
 
 html {
   font-family: 'SF Pro Text', sans-serif;
