@@ -1,3 +1,4 @@
+//класс и методы
 class Pizza {
   constructor(type, size) {
     this.types = {
@@ -12,7 +13,7 @@ class Pizza {
     };
 
     if (!this.types[type] || !this.sizes[size]) {
-      throw new Error("Ошибка! Такой пиццы не существует.");
+      throw new Error("Ошибка! Такой пиццы не существует");
     }
 
     this.type = type;
@@ -62,3 +63,85 @@ class Pizza {
     return total;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let selectedPizza = "Пепперони";
+  let selectedSize = "Маленькая";
+  let selectedToppings = [];
+
+  const defaultSize = document.querySelector(".pizza__size");
+  if (defaultSize) {
+      defaultSize.classList.add("pizza__size-active");
+  }
+
+  const defaultPizza = [...document.querySelectorAll(".pizza__card")].find(card => 
+      card.querySelector(".pizza__name").textContent === "Пепперони"
+  );
+  if (defaultPizza) {
+      defaultPizza.classList.add("pizza__card-active");
+  }
+
+  const button = document.querySelector(".order__button");
+
+  function updateButton() {
+      if (!selectedPizza) return;
+      const pizza = new Pizza(selectedPizza, selectedSize);
+      selectedToppings.forEach(topping => pizza.addTopping(topping));
+      button.textContent = `Добавить в корзину за ${pizza.calculatePrice()}₽ (${pizza.calculateCalories()} ккал)`;
+  }
+
+  function updateToppingPrices() {
+      document.querySelectorAll(".topping__card").forEach(topping => {
+          const toppingName = topping.querySelector(".topping__name").textContent.trim();
+          const priceElement = topping.querySelector(".topping__сost");
+          
+          const toppingPrices = {
+              "Сливочная моцарелла": 50,
+              "Сырный борт": (selectedSize === 'Маленькая' ? 150 : 300),
+              "Чедер и пармезан": (selectedSize === 'Маленькая' ? 150 : 300)
+          };
+
+          if (priceElement && toppingPrices[toppingName] !== undefined) {
+              priceElement.textContent = `${toppingPrices[toppingName]}₽`;
+          }
+      });
+  }
+
+  document.querySelectorAll(".pizza__card").forEach(card => {
+      card.addEventListener("click", () => {
+          document.querySelectorAll(".pizza__card").forEach(c => c.classList.remove("pizza__card-active"));
+          card.classList.add("pizza__card-active");
+          selectedPizza = card.querySelector(".pizza__name").textContent;
+          updateButton();
+      });
+  });
+
+  document.querySelectorAll(".pizza__size").forEach(size => {
+      size.addEventListener("click", () => {
+          document.querySelectorAll(".pizza__size").forEach(s => s.classList.remove("pizza__size-active"));
+          size.classList.add("pizza__size-active");
+          selectedSize = size.textContent;
+          updateToppingPrices();
+          updateButton();
+      });
+  });
+
+  document.querySelectorAll(".topping__card").forEach(topping => {
+      topping.addEventListener("click", () => {
+          const toppingName = topping.querySelector(".topping__name").textContent.trim();
+          
+          if (selectedToppings.includes(toppingName)) {
+              selectedToppings = selectedToppings.filter(t => t !== toppingName);
+              topping.classList.remove("topping__card-active");
+          } else {
+              selectedToppings.push(toppingName);
+              topping.classList.add("topping__card-active");
+          }
+          
+          updateButton();
+      });
+  });
+
+  updateToppingPrices();
+  updateButton();
+});
